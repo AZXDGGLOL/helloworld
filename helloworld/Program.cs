@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using System.ComponentModel.Design;
 
 namespace helloworld
 {
@@ -16,16 +17,34 @@ namespace helloworld
             while (true) { 
             Console.WriteLine("Please, input you full name (Eng) :");
             name = Console.ReadLine();
-                if (name == "") ;
+                if (name == "")
+                Console.WriteLine("Please enter something"); 
                 else break;
             };
 
 
-            while (true) {
-                Console.WriteLine("Plaese fill in your height(cm) : ");
-                height = Convert.ToInt16(Console.ReadLine());
-                if (height > 100); break; };
-            
+            while (true)
+            {
+                Console.Write("Please fill in your height (cm): ");
+                string input = Console.ReadLine()?.Trim();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Empty input.");
+                    continue;
+                }
+                if (!int.TryParse(input, out height))
+                {
+                    Console.WriteLine("Invalid number.");
+                    continue;
+                }
+                if (height <= 100)
+                {
+                    Console.WriteLine("Height must be greater than 100 cm.");
+                    continue;
+                }
+                break;
+            }
+
 
             while (true)
             {
@@ -46,7 +65,7 @@ namespace helloworld
 
             Console.WriteLine();
             Console.WriteLine("press any key to end program");
-            Console.ReadKey();
+            
         }
     }
 }
