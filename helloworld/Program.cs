@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System.ComponentModel.Design;
 
-namespace helloworld
+namespace consolebomb
 {
     internal class Program
     {
