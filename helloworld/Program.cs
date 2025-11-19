@@ -15,7 +15,6 @@ namespace helloworld
             Console.WriteLine("Please, input you full name (Eng) :");
             name = Console.ReadLine();
 
-            Console.WriteLine("Hello, Welcome "+name);
             Console.WriteLine("Pleese tell us your gender f/m");
             gender = Console.ReadLine();
 
@@ -26,11 +25,13 @@ namespace helloworld
             {
                  weight = height -= 110;
             }
-            else
+            else if (gender == "m")
             {
                  weight = height -= 100;
             }
 
+
+            Console.WriteLine("Hello, Welcome " + name);
             Console.WriteLine("Your ideal weight is : " + weight.ToString());
 
             Console.WriteLine();
